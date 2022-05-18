@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:random/screens/register.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Column(
-                          children: [
+                          children: const [
                             FittedBox(
                               child: Padding(
                                 padding: EdgeInsets.all(10.0),
@@ -60,7 +61,7 @@ class _LoginState extends State<Login> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Form(
@@ -72,17 +73,17 @@ class _LoginState extends State<Login> {
                                       border: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(15)),
-                                      hintText: 'Enter username',
-                                      label: Text('Username')),
+                                      hintText: 'Enter E-mail',
+                                      label: const Text('E-mail')),
                                   // The validator receives the text that the user has entered.
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'Random app does not prefer random username';
+                                      return 'Random app does not prefer random E-mail';
                                     }
                                     return null;
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 TextFormField(
@@ -108,7 +109,7 @@ class _LoginState extends State<Login> {
                                           borderRadius:
                                               BorderRadius.circular(15)),
                                       hintText: 'Enter Password',
-                                      label: Text('Password')),
+                                      label: const Text('Password')),
                                   // The validator receives the text that the user has entered.
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
@@ -117,17 +118,17 @@ class _LoginState extends State<Login> {
                                     return null;
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 30,
                                 ),
                                 ElevatedButton(
                                   style: ButtonStyle(
                                       textStyle: MaterialStateProperty.all(
-                                          TextStyle(
+                                          const TextStyle(
                                               fontSize: 24,
                                               fontFamily: 'Skranji')),
                                       minimumSize: MaterialStateProperty.all(
-                                          Size(double.infinity, 60)),
+                                          const Size(double.infinity, 60)),
                                       shape: MaterialStateProperty.all(
                                           RoundedRectangleBorder(
                                               borderRadius:
@@ -149,13 +150,13 @@ class _LoginState extends State<Login> {
                                 ),
                               ],
                             )),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         FittedBox(
                           child: Row(
                             children: [
-                              Text(
+                              const Text(
                                 "Stop being random! &",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
@@ -163,13 +164,22 @@ class _LoginState extends State<Login> {
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600),
                               ),
-                              Text(
-                                " Create Account",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600),
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Register(),
+                                      ));
+                                },
+                                child: Text(
+                                  " Create Account",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Theme.of(context).primaryColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600),
+                                ),
                               ),
                             ],
                           ),

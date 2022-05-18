@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:random/screens/login.dart';
+import 'package:random/screens/register.dart';
+import 'package:random/screens/welcome.dart';
 
 class Root extends StatelessWidget {
   const Root({Key? key}) : super(key: key);
@@ -10,7 +12,7 @@ class Root extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: SafeArea(child: Login()),
+      home: SafeArea(child: Welcome()),
     );
   }
 }
