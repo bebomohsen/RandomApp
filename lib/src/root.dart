@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:random/screens/home.dart';
 import 'package:random/screens/login.dart';
 import 'package:random/screens/register.dart';
 import 'package:random/screens/welcome.dart';
@@ -12,7 +13,7 @@ class Root extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: SafeArea(child: Welcome()),
+      home: SafeArea(child: Home()),
     );
   }
 }
