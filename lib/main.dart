@@ -7,6 +7,5 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-DateTime.now().
   runApp(const Root());
 }
