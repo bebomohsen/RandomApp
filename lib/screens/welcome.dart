@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:random/screens/home.dart';
 import 'package:random/screens/login.dart';
 import 'package:random/screens/register.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -72,7 +75,7 @@ class _WelcomeState extends State<Welcome> {
                           color: Colors.black,
                           borderColor: Colors.white,
                           selectedBorderColor: Colors.white,
-                          onPressed: (index) {
+                          onPressed: (index) async {
                             if (index == 0) {
                               Navigator.pushReplacement(
                                   context,
@@ -80,6 +83,25 @@ class _WelcomeState extends State<Welcome> {
                                     builder: (context) => Register(),
                                   ));
                             }else {
+                              try {
+                                final userCredential =
+                                    await FirebaseAuth.instance.signInAnonymously();
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Home(),
+                                    ));
+                                print("Signed in with temporary account. ---- \n$userCredential");
+                              } on FirebaseAuthException catch (e) {
+                                switch (e.code) {
+                                  case "operation-not-allowed":
+                                    print("Anonymous auth hasn't been enabled for this project.");
+                                    break;
+                                  default:
+                                    print("Unknown error.");
+                                }
+                              }
+
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
