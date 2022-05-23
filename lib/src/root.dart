@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:random/main.dart';
 import 'package:random/screens/home.dart';
 import 'package:random/screens/login.dart';
 import 'package:random/screens/register.dart';
@@ -13,7 +14,7 @@ class Root extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: Welcome(),
+      home: isLogin == false ? Welcome() : Home(),
     );
   }
 }
