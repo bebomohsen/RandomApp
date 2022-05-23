@@ -64,23 +64,25 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.blueGrey),
-                    child: Center(
-                      child: Text(
-                        'Iam so sorry but I didnot have the time to finish my project I only did sign in with Email and password sign up with email and password with email verification and also you can sign in anonymous by firebase Thanks alot for all these valuable content and i wish all good for you\nAhmed AbdElmohsen Ali Diab',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                            fontFamily: 'Skranji'),
-                      ),
-                    ))
+                Expanded(
+                  child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(50)),
+                          color: Colors.deepPurple),
+                      child: Center(
+                        child: Text(
+                          'Iam so sorry but I didnot have the time to finish my project I only did sign in with Email and password sign up with email and password with email verification and also you can sign in anonymous by firebase Thanks alot for all these valuable content and i wish all good for you\nAhmed AbdElmohsen Ali Diab',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                              fontFamily: 'Skranji'),
+                        ),
+                      )),
+                )
               ],
             ),
           )
