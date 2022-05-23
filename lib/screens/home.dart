@@ -58,10 +58,10 @@ class _HomeState extends State<Home> {
                         color: Colors.blueGrey),
                     child: Center(
                       child: Text(
-                        'Iam so sorry , but I didnot have the time to finish my project , I only did sign in with Email and password , sign up with email and password with email verification and also you can sign in anonymous by firebase\nThanks alot for all these valuable content and i wish all good for you\nAhmed AbdElmohsen Ali Diab',
+                        'Iam so sorry but I didnot have the time to finish my project I only did sign in with Email and password sign up with email and password with email verification and also you can sign in anonymous by firebase Thanks alot for all these valuable content and i wish all good for you\nAhmed AbdElmohsen Ali Diab',
                         textAlign: TextAlign.justify,
                         style: TextStyle(color: Colors.white,
-                            fontWeight: FontWeight.bold, fontSize: 24),
+                            fontWeight: FontWeight.bold, fontSize: 24,fontFamily: 'Skranji'),
                       ),
                     ))
               ],
